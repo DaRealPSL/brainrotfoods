@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "minecraft:milk_bucket",
+    "M": "minecraft:melon_slice",
+    "S": "minecraft:sugar"
+  },
+  "pattern": [
+    "MMM",
+    " S ",
+    " B "
+  ],
+  "result": {
+    "count": 1,
+    "id": "doritosandprime:mango_smoothie"
+  }
+}

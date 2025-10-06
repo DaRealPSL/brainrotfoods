@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "minecraft:glass_bottle",
+    "G": "minecraft:green_dye",
+    "L": "minecraft:glowstone_dust",
+    "S": "minecraft:sugar"
+  },
+  "pattern": [
+    "GLG",
+    "SBS",
+    "GLG"
+  ],
+  "result": {
+    "count": 1,
+    "id": "doritosandprime:mountain_dew"
+  }
+}

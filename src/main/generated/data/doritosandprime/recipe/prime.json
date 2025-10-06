@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "minecraft:glass_bottle",
+    "S": "minecraft:sugar",
+    "W": "minecraft:water_bucket"
+  },
+  "pattern": [
+    " S ",
+    " W ",
+    " B "
+  ],
+  "result": {
+    "count": 1,
+    "id": "doritosandprime:prime"
+  }
+}

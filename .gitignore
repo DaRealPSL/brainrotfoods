@@ -1,0 +1,70 @@
+# Gradle
+.gradle/
+build/
+out/
+classes/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Eclipse
+*.launch
+.settings/
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# VS Code
+.vscode/
+
+# Minecraft
+run/
+logs/
+crash-reports/
+saves/
+.DS_Store
+
+# Loom & Cache
+.gradle/
+.gradle-cache/
+.minecraft/
+.cache/
+.loomcache/
+run/
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+hs_err_pid*
+replay_pid*
+
+# OS Specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Other
+*.log
+*.lock
+*.DS_Store
+*.idx
+*.dat
+*.gz
+*.swp
+
+# Local environment
+.env
+*.env

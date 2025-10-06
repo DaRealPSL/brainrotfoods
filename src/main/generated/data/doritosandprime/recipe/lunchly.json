@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": "doritosandprime:prime",
+    "F": "doritosandprime:feastables",
+    "P": "minecraft:paper"
+  },
+  "pattern": [
+    "PPP",
+    "PDP",
+    "PFP"
+  ],
+  "result": {
+    "count": 1,
+    "id": "doritosandprime:lunchly"
+  }
+}

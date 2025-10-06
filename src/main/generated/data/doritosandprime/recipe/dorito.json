@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "minecraft:blaze_powder",
+    "G": "minecraft:gold_nugget",
+    "W": "minecraft:wheat"
+  },
+  "pattern": [
+    "WBW",
+    " G ",
+    "WBW"
+  ],
+  "result": {
+    "count": 4,
+    "id": "doritosandprime:dorito"
+  }
+}
