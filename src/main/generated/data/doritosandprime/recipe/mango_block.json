@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "M": "doritosandprime:mango"
+  },
+  "pattern": [
+    "MMM",
+    "MMM",
+    "MMM"
+  ],
+  "result": {
+    "count": 1,
+    "id": "doritosandprime:mango_block"
+  }
+}
