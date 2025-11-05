@@ -124,13 +124,13 @@ public class DoritosandprimeRecipeProvider extends FabricRecipeProvider {
                 // MANGO
                 //
                 ShapedRecipeJsonBuilder.create(itemLookup, RecipeCategory.FOOD, ItemInit.mango_smoothie)
-                        .input('M', Items.MELON_SLICE)
+                        .input('M', ItemInit.mango)
                         .input('S', Items.SUGAR)
                         .input('B', Items.MILK_BUCKET)
                         .pattern("MMM")
                         .pattern(" S ")
                         .pattern(" B ")
-                        .criterion(hasItem(Items.MELON_SLICE), conditionsFromItem(Items.MELON_SLICE))
+                        .criterion(hasItem(ItemInit.mango), conditionsFromItem(ItemInit.mango))
                         .offerTo(exporter);
 
                 //
