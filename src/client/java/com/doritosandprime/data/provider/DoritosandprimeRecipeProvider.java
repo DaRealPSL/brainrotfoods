@@ -1,5 +1,7 @@
+// src/client/java/com/doritosandprime/data/provider/DoritosandprimeRecipeProvider.java
 package com.doritosandprime.data.provider;
 
+import com.doritosandprime.init.BlockInit;
 import com.doritosandprime.init.ItemInit;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
@@ -12,6 +14,8 @@ import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryEntryLookup;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.util.Identifier;
+
 
 import java.util.concurrent.CompletableFuture;
 
@@ -92,6 +96,28 @@ public class DoritosandprimeRecipeProvider extends FabricRecipeProvider {
                         .pattern("SBS")
                         .pattern("GLG")
                         .criterion(hasItem(Items.GLASS_BOTTLE), conditionsFromItem(Items.GLASS_BOTTLE))
+                        .offerTo(exporter);
+
+
+                //
+                // MANGO
+                //
+                ShapedRecipeJsonBuilder.create(itemLookup, RecipeCategory.FOOD, ItemInit.mango, 9)
+                        .input('M', BlockInit.MANGO_BLOCK)
+                        .pattern("M")
+                        .criterion(hasItem(BlockInit.MANGO_BLOCK), conditionsFromItem(BlockInit.MANGO_BLOCK))
+                        .offerTo(exporter, String.valueOf(Identifier.of("doritosandprime", "mango_from_block")));
+//                        .offerTo(exporter);
+
+                //
+                // MANGO BLOCK (crafting from mangoes)
+                //
+                ShapedRecipeJsonBuilder.create(itemLookup, RecipeCategory.BUILDING_BLOCKS, BlockInit.MANGO_BLOCK)
+                        .input('M', ItemInit.mango)
+                        .pattern("MMM")
+                        .pattern("MMM")
+                        .pattern("MMM")
+                        .criterion(hasItem(ItemInit.mango), conditionsFromItem(ItemInit.mango))
                         .offerTo(exporter);
 
                 //

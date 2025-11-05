@@ -1,3 +1,4 @@
+// src/main/java/com/doritosandprime/init/ItemGroupInit.java
 package com.doritosandprime.init;
 
 import com.doritosandprime.Doritosandprime;

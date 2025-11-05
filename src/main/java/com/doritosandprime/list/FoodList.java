@@ -1,3 +1,4 @@
+// src/main/java/com/doritosandprime/list/FoodList.java
 package com.doritosandprime.list;
 
 import net.minecraft.component.type.ConsumableComponent;
@@ -64,6 +65,20 @@ public class FoodList {
     public static final FoodComponent mountain_dew_component = new FoodComponent.Builder()
             .nutrition(4)
             .saturationModifier(0.6F)
+            .build();
+
+
+    // Mango - Mango Mango Mango Mango'
+    // 67 67 67 67
+    public static final ConsumableComponent MANGO_CONSUMABLE = ConsumableComponents.food()
+            // we can add effects if we want like this:
+            // But for now we won't, cus it is just a mango.
+//            .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 20 * 5, 0), 0.3F)) // Regeneration I for 5s (30% chance)
+            .build();
+
+    public static final FoodComponent mango_component = new FoodComponent.Builder()
+            .nutrition(4)
+            .saturationModifier(0.3F)
             .build();
 
     // Mango Smoothie - restorative drink with absorption

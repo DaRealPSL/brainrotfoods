@@ -1,3 +1,4 @@
+// src/main/java/com/doritosandprime/init/ItemInit.java
 package com.doritosandprime.init;
 
 import com.doritosandprime.Doritosandprime;
@@ -9,6 +10,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Rarity;
+import com.doritosandprime.init.BlockInit;
 
 public class ItemInit {
     public static final Item prime = register("prime",
@@ -50,6 +52,16 @@ public class ItemInit {
                     .rarity(Rarity.EPIC)
                     .registryKey(RegistryKey.of(RegistryKeys.ITEM, Doritosandprime.id("mountain_dew")))));
 
+    public static final Item mango = register("mango",
+            new Item(new Item.Settings()
+                    .food(FoodList.mango_component)
+                    .component(DataComponentTypes.CONSUMABLE, FoodList.MANGO_CONSUMABLE)
+                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Doritosandprime.id("mango")))));
+
+    public static final Item mango_block = register("mango_block",
+            new net.minecraft.item.BlockItem(BlockInit.MANGO_BLOCK, new Item.Settings()
+                    .useBlockPrefixedTranslationKey()
+                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Doritosandprime.id("mango_block")))));
 
     public static final Item mango_smoothie = register("mango_smoothie",
             new Item(new Item.Settings()
@@ -65,6 +77,7 @@ public class ItemInit {
                     .component(DataComponentTypes.CONSUMABLE, FoodList.FLAMIN_CHEETOS_CONSUMABLE)
                     .rarity(Rarity.EPIC)
                     .registryKey(RegistryKey.of(RegistryKeys.ITEM, Doritosandprime.id("flamin_cheetos")))));
+
 
 
     public static <T extends Item> T register(String name, T item) {

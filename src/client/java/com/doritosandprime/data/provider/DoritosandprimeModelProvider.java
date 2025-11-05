@@ -1,5 +1,7 @@
+// src/client/java/com/doritosandprime/data/provider/DoritosandprimeModelProvider.java
 package com.doritosandprime.data.provider;
 
+import com.doritosandprime.init.BlockInit;
 import com.doritosandprime.init.ItemInit;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -14,6 +16,7 @@ public class DoritosandprimeModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
+        blockStateModelGenerator.registerSimpleCubeAll(BlockInit.MANGO_BLOCK);
     }
 
     @Override
@@ -25,5 +28,7 @@ public class DoritosandprimeModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ItemInit.mountain_dew, Models.GENERATED);
         itemModelGenerator.register(ItemInit.mango_smoothie, Models.GENERATED);
         itemModelGenerator.register(ItemInit.flamin_cheetos, Models.GENERATED);
+        itemModelGenerator.register(ItemInit.mango, Models.GENERATED);
+
     }
 }

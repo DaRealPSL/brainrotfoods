@@ -1,6 +1,8 @@
+// src/client/java/com/doritosandprime/data/provider/DoritosandprimeEnglishLanguageProvider.java
 package com.doritosandprime.data.provider;
 
 import com.doritosandprime.Doritosandprime;
+import com.doritosandprime.init.BlockInit;
 import com.doritosandprime.init.ItemGroupInit;
 import com.doritosandprime.init.ItemInit;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -36,5 +38,7 @@ public class DoritosandprimeEnglishLanguageProvider extends FabricLanguageProvid
         translationBuilder.add(ItemInit.mountain_dew, "Mountain Dew");
         translationBuilder.add(ItemInit.mango_smoothie, "Mango Smoothie");
         translationBuilder.add(ItemInit.flamin_cheetos, "Flamin' Hot Cheetos");
+        translationBuilder.add(ItemInit.mango, "Mango");
+        translationBuilder.add(BlockInit.MANGO_BLOCK, "Mango Block");
     }
 }
