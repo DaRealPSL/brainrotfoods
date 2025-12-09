@@ -3,20 +3,20 @@ package com.doritosandprime;
 import com.doritosandprime.init.BlockInit;
 import com.doritosandprime.init.ItemGroupInit;
 import com.doritosandprime.init.ItemInit;
-import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.item.ItemGroup;
+import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
+
 import net.minecraft.item.ItemGroups;
 import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
-
-import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
-import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
-import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.world.biome.BiomeKeys;
 import net.minecraft.world.gen.GenerationStep;
+import net.minecraft.registry.RegistryKey;
+
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -41,11 +41,11 @@ public class Doritosandprime implements ModInitializer {
             entries.addAfter(ItemInit.lunchly, ItemInit.mountain_dew);
             entries.addAfter(ItemInit.mountain_dew, ItemInit.mango_smoothie);
             entries.addAfter(ItemInit.mango_smoothie, ItemInit.flamin_cheetos);
+            entries.addAfter(ItemInit.flamin_cheetos, ItemInit.grimace_shake);
+            entries.addAfter(ItemInit.grimace_shake, ItemInit.monster_energy);
 		});
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
-            entries.add(ItemInit.mango_block);
-        });
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> entries.add(ItemInit.mango_block));
 
         BiomeModifications.addFeature(
                 BiomeSelectors.includeByKey(
