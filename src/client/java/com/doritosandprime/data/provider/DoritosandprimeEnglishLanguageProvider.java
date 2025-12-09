@@ -32,7 +32,7 @@ public class DoritosandprimeEnglishLanguageProvider extends FabricLanguageProvid
     public void generateTranslations(RegistryWrapper.WrapperLookup wrapperLookup, TranslationBuilder translationBuilder) {
         translationBuilder.add(ItemInit.dorito, "Dorito");
         translationBuilder.add(ItemInit.prime, "Prime Bottle");
-        addText(translationBuilder, ItemGroupInit.GROUP_TITLE, "Doritos and Prime"); // if it errors out, change this value to MOD_GROUP
+        addText(translationBuilder, ItemGroupInit.GROUP_TITLE, "Meme Foods"); // if it errors out, change this value to MOD_GROUP
         translationBuilder.add(ItemInit.feastables, "Feastables Chocolate");
         translationBuilder.add(ItemInit.lunchly, "Lunchly");
         translationBuilder.add(ItemInit.mountain_dew, "Mountain Dew");
@@ -40,5 +40,7 @@ public class DoritosandprimeEnglishLanguageProvider extends FabricLanguageProvid
         translationBuilder.add(ItemInit.flamin_cheetos, "Flamin' Hot Cheetos");
         translationBuilder.add(ItemInit.mango, "Mango");
         translationBuilder.add(BlockInit.MANGO_BLOCK, "Mango Block");
+        translationBuilder.add(ItemInit.grimace_shake, "Grimace Shake");
+        translationBuilder.add(ItemInit.monster_energy, "Monster Energy Drink");
     }
 }
