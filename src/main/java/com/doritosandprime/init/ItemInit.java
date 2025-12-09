@@ -10,7 +10,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Rarity;
-import com.doritosandprime.init.BlockInit;
+//import com.doritosandprime.init.BlockInit;
 
 public class ItemInit {
     public static final Item prime = register("prime",
@@ -78,6 +78,21 @@ public class ItemInit {
                     .rarity(Rarity.EPIC)
                     .registryKey(RegistryKey.of(RegistryKeys.ITEM, Doritosandprime.id("flamin_cheetos")))));
 
+    // Grimace Shake
+    public static final Item grimace_shake = register("grimace_shake",
+            new Item(new Item.Settings()
+                    .food(FoodList.grimace_shake_component)
+                    .component(DataComponentTypes.CONSUMABLE, FoodList.GRIMACE_SHAKE_CONSUMABLE)
+                    .rarity(Rarity.RARE)
+                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Doritosandprime.id("grimace_shake")))));
+
+    // Monster Energy Drink
+    public static final Item monster_energy = register("monster_energy",
+            new Item(new Item.Settings()
+                    .food(FoodList.monster_energy_component)
+                    .component(DataComponentTypes.CONSUMABLE, FoodList.MONSTER_ENERGY_COMSUMABLE)
+                    .rarity(Rarity.RARE)
+                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Doritosandprime.id("monster_energy")))));
 
 
     public static <T extends Item> T register(String name, T item) {
