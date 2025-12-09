@@ -9,7 +9,7 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.consume.ApplyEffectsConsumeEffect;
 
 public class FoodList {
-    // Prime - Epic drink with powerful effects
+    // Prime
     public static final ConsumableComponent PRIME_CONSUMABLE = ConsumableComponents.drink()
             .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 20 * 60, 1), 1.0F))
             .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 20 * 60, 9), 0.1F))
@@ -23,7 +23,7 @@ public class FoodList {
             .alwaysEdible()
             .build();
 
-    // Dorito - Spicy snack with protective effects
+    // Dorito
     public static final ConsumableComponent DORITO_CONSUMABLE = ConsumableComponents.food()
             .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 20 * 120, 1), 1.0F))
             .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 20 * 60, 1), 1.0F))
@@ -34,7 +34,7 @@ public class FoodList {
             .saturationModifier(2.5F)
             .build();
 
-    // Feastables - Chocolate bar with glowing effect
+    // Feastables
     public static final ConsumableComponent FEASTABLES_CONSUMABLE = ConsumableComponents.food()
             .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.GLOWING, 20 * 30, 1), 1.0F))
             .build();
@@ -44,7 +44,7 @@ public class FoodList {
             .saturationModifier(2.5F)
             .build();
 
-    // Lunchly - Questionable meal with negative effects
+    // Lunchly
     public static final ConsumableComponent LUNCHLY_CONSUMABLE = ConsumableComponents.food()
             .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 20 * 15, 1), 0.8F))
             .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.POISON, 20 * 20, 1), 0.8F))
@@ -56,7 +56,7 @@ public class FoodList {
             .saturationModifier(1.5F)
             .build();
 
-    // Mountain Dew - MLG gamer drink: speed + jump boost
+    // Mountain Dew
     public static final ConsumableComponent MOUNTAIN_DEW_CONSUMABLE = ConsumableComponents.drink()
             .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.SPEED, 20 * 20, 1), 1.0F)) // Speed II for 20s
             .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST, 20 * 10, 0), 1.0F)) // Jump Boost I for 10s
@@ -92,7 +92,7 @@ public class FoodList {
             .saturationModifier(1.2F)
             .build();
 
-    // Flamin' Hot Cheetos - spicy snack: speed + occasional nausea
+    // Flamin' Hot Cheetos
     public static final ConsumableComponent FLAMIN_CHEETOS_CONSUMABLE = ConsumableComponents.food()
             .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.SPEED, 20 * 15, 0), 1.0F)) // Speed I for 15s
             .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 20 * 5, 0), 0.8F)) // Nausea for 5s (80% chance)
@@ -104,9 +104,33 @@ public class FoodList {
             .saturationModifier(0.8F)
             .build();
 
+    // Grimace Shake
+    public static final ConsumableComponent GRIMACE_SHAKE_CONSUMABLE = ConsumableComponents.food()
+            .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 20 * 10, 1), 1.0F))
+            .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 20 * 5, 0), 1.0F))
+            .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 20 * 4, 0), 1.0F))
+            .build();
+
+    public static final FoodComponent grimace_shake_component = new FoodComponent.Builder()
+            .nutrition(6)
+            .saturationModifier(0.6F)
+            .build();
+
+    // Monster Energy Drink
+    public static final ConsumableComponent MONSTER_ENERGY_COMSUMABLE = ConsumableComponents.food()
+            .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.SPEED, 20 * 25, 1), 1.0F))
+            .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.HASTE, 20 * 20, 0), 1.0F))
+            .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 20 * 10, 0), 1.0F))
+            .build();
+
+    public static final FoodComponent monster_energy_component = new FoodComponent.Builder()
+            .nutrition(4)
+            .saturationModifier(0.4F)
+            .build();
 
     // IDEAS TO ADD NEXT:
-    // * Monster Energy Drink
-    // * Chug Jug
-    // * Szechuan Sauce
+    // [x] Monster Energy Drink
+    // [x] Grimace Shake
+    // [] ...
+
 }
