@@ -145,7 +145,41 @@ public class DoritosandprimeRecipeProvider extends FabricRecipeProvider {
                         .pattern("WRW")
                         .criterion(hasItem(Items.WHEAT), conditionsFromItem(Items.WHEAT))
                         .offerTo(exporter);
+
+                //
+                // GRIMACE SHAKE
+                //
+                ShapedRecipeJsonBuilder.create(itemLookup, RecipeCategory.FOOD, ItemInit.grimace_shake)
+                        .input('A', Items.SWEET_BERRIES)
+                        .input('S', Items.SUGAR)
+                        .input('P', Items.PURPLE_DYE)
+                        .input('M', Items.MILK_BUCKET)
+                        .input('G', Items.GLASS_BOTTLE)
+                        .input('L', Items.SLIME_BALL)
+                        .pattern("ASP")
+                        .pattern("MGS")
+                        .pattern(" L ")
+                        .criterion(hasItem(Items.MILK_BUCKET), conditionsFromItem(Items.MILK_BUCKET))
+                        .criterion(hasItem(Items.SWEET_BERRIES), conditionsFromItem(Items.SWEET_BERRIES))
+                        .offerTo(exporter);
+
+                //
+                // MONSTER ENERGY DRINK
+                //
+                ShapedRecipeJsonBuilder.create(itemLookup, RecipeCategory.FOOD, ItemInit.monster_energy)
+                        .input('S', Items.SUGAR)
+                        .input('G', Items.GLOW_INK_SAC)
+                        .input('B', Items.GLASS_BOTTLE)
+                        .input('C', Items.SUGAR_CANE)
+                        .input('I', Items.IRON_NUGGET)
+                        .pattern("SGS")
+                        .pattern("BCB")
+                        .pattern(" I ")
+                        .criterion(hasItem(Items.GLOW_INK_SAC), conditionsFromItem(Items.GLOW_INK_SAC))
+                        .criterion(hasItem(Items.SUGAR_CANE), conditionsFromItem(Items.SUGAR_CANE))
+                        .offerTo(exporter);
             }
+
         };
     }
 
