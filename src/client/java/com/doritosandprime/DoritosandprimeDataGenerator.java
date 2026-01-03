@@ -14,6 +14,6 @@ public class DoritosandprimeDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(DoritosandprimeModelProvider::new);
 		pack.addProvider(DoritosandprimeEnglishLanguageProvider::new);
 		pack.addProvider(DoritosandprimeRecipeProvider::new);
-        pack.addProvider(DoritosandprimeLootTableProvider::new);
+		pack.addProvider(DoritosandprimeLootTableProvider::new);
 	}
 }
