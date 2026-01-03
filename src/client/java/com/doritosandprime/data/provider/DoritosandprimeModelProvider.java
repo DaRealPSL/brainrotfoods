@@ -1,4 +1,3 @@
-// src/client/java/com/doritosandprime/data/provider/DoritosandprimeModelProvider.java
 package com.doritosandprime.data.provider;
 
 import com.doritosandprime.init.BlockInit;
