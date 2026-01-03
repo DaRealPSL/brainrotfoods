@@ -17,48 +17,46 @@ import net.minecraft.world.biome.BiomeKeys;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.registry.RegistryKey;
 
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class Doritosandprime implements ModInitializer {
-	public static final Logger LOGGER = LoggerFactory.getLogger("doritosandprime");
-	public static final String MOD_ID = "doritosandprime";
+        public static final Logger LOGGER = LoggerFactory.getLogger("doritosandprime");
+        public static final String MOD_ID = "doritosandprime";
 
-	@Override
-	public void onInitialize() {
-		LOGGER.info("Loading...");
-		ItemInit.load();
-		ItemGroupInit.load();
-        BlockInit.initialize();
+        @Override
+        public void onInitialize() {
+                LOGGER.info("Loading...");
+                ItemInit.load();
+                ItemGroupInit.load();
+                BlockInit.initialize();
 
-		ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(entries -> {
-			entries.addAfter(Items.PUMPKIN_PIE, ItemInit.dorito);
-			entries.addBefore(Items.MILK_BUCKET, ItemInit.prime);
-			entries.addAfter(ItemInit.dorito, ItemInit.feastables);
-			entries.addAfter(ItemInit.feastables, ItemInit.lunchly);
-            entries.add(ItemInit.mango);
-            entries.addAfter(ItemInit.lunchly, ItemInit.mountain_dew);
-            entries.addAfter(ItemInit.mountain_dew, ItemInit.mango_smoothie);
-            entries.addAfter(ItemInit.mango_smoothie, ItemInit.flamin_cheetos);
-            entries.addAfter(ItemInit.flamin_cheetos, ItemInit.grimace_shake);
-            entries.addAfter(ItemInit.grimace_shake, ItemInit.monster_energy);
-		});
+                ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(entries -> {
+                        entries.addAfter(Items.PUMPKIN_PIE, ItemInit.dorito);
+                        entries.addBefore(Items.MILK_BUCKET, ItemInit.prime);
+                        entries.addAfter(ItemInit.dorito, ItemInit.feastables);
+                        entries.addAfter(ItemInit.feastables, ItemInit.lunchly);
+                        entries.add(ItemInit.mango);
+                        entries.addAfter(ItemInit.lunchly, ItemInit.mountain_dew);
+                        entries.addAfter(ItemInit.mountain_dew, ItemInit.mango_smoothie);
+                        entries.addAfter(ItemInit.mango_smoothie, ItemInit.flamin_cheetos);
+                        entries.addAfter(ItemInit.flamin_cheetos, ItemInit.grimace_shake);
+                        entries.addAfter(ItemInit.grimace_shake, ItemInit.monster_energy);
+                });
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> entries.add(ItemInit.mango_block));
+                ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS)
+                                .register(entries -> entries.add(ItemInit.mango_block));
 
-        BiomeModifications.addFeature(
-                BiomeSelectors.includeByKey(
-                        BiomeKeys.JUNGLE,
-                        BiomeKeys.SPARSE_JUNGLE,
-                        BiomeKeys.BAMBOO_JUNGLE
-                ),
-                GenerationStep.Feature.VEGETAL_DECORATION,
-                RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(MOD_ID, "patch_mango"))
-        );
-	}
+                BiomeModifications.addFeature(
+                                BiomeSelectors.includeByKey(
+                                                BiomeKeys.JUNGLE,
+                                                BiomeKeys.SPARSE_JUNGLE,
+                                                BiomeKeys.BAMBOO_JUNGLE),
+                                GenerationStep.Feature.VEGETAL_DECORATION,
+                                RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(MOD_ID, "patch_mango")));
+        }
 
-	public static Identifier id(String path) {
-		return Identifier.of(MOD_ID, path);
-	}
+        public static Identifier id(String path) {
+                return Identifier.of(MOD_ID, path);
+        }
 }
