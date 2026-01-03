@@ -19,7 +19,8 @@ import net.minecraft.registry.RegistryWrapper;
 import java.util.concurrent.CompletableFuture;
 
 public class DoritosandprimeLootTableProvider extends FabricBlockLootTableProvider {
-    public DoritosandprimeLootTableProvider(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
+    public DoritosandprimeLootTableProvider(FabricDataOutput dataOutput,
+            CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
         super(dataOutput, registryLookup);
     }
 
@@ -32,8 +33,10 @@ public class DoritosandprimeLootTableProvider extends FabricBlockLootTableProvid
         addDropWithSilkTouch(BlockInit.MANGO_BLOCK);
 
         // Make mango blocks drop between 3 and 8 mangoes
-        addDrop(BlockInit.MANGO_BLOCK, LootTable.builder().pool(addSurvivesExplosionCondition(ItemInit.mango, LootPool.builder()
-                .rolls(new UniformLootNumberProvider(new ConstantLootNumberProvider(3), new ConstantLootNumberProvider(8)))
-                .with(ItemEntry.builder(ItemInit.mango)))));
+        addDrop(BlockInit.MANGO_BLOCK,
+                LootTable.builder().pool(addSurvivesExplosionCondition(ItemInit.mango, LootPool.builder()
+                        .rolls(new UniformLootNumberProvider(new ConstantLootNumberProvider(3),
+                                new ConstantLootNumberProvider(8)))
+                        .with(ItemEntry.builder(ItemInit.mango)))));
     }
 }
