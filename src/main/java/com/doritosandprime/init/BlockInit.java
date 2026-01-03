@@ -18,5 +18,6 @@ public class BlockInit {
         return Registry.register(Registries.BLOCK, Doritosandprime.id(name), block);
     }
 
-    public static void initialize() {}
+    public static void initialize() {
+    }
 }
