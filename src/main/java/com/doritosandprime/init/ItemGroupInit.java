@@ -1,4 +1,3 @@
-// src/main/java/com/doritosandprime/init/ItemGroupInit.java
 package com.doritosandprime.init;
 
 import com.doritosandprime.Doritosandprime;
@@ -27,5 +26,6 @@ public class ItemGroupInit {
         return Registry.register(Registries.ITEM_GROUP, Doritosandprime.id(name), itemGroup);
     }
 
-    public static void load() {}
+    public static void load() {
+    }
 }
