@@ -1,4 +1,3 @@
-// src/client/java/com/doritosandprime/data/provider/DoritosandprimeEnglishLanguageProvider.java
 package com.doritosandprime.data.provider;
 
 import com.doritosandprime.Doritosandprime;
@@ -16,12 +15,13 @@ import java.util.concurrent.CompletableFuture;
 
 public class DoritosandprimeEnglishLanguageProvider extends FabricLanguageProvider {
 
-    public DoritosandprimeEnglishLanguageProvider(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
+    public DoritosandprimeEnglishLanguageProvider(FabricDataOutput dataOutput,
+            CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
         super(dataOutput, registryLookup);
     }
 
     private static void addText(@NotNull TranslationBuilder builder, @NotNull Text text, @NotNull String value) {
-        if(text.getContent() instanceof TranslatableTextContent translatableTextContent) {
+        if (text.getContent() instanceof TranslatableTextContent translatableTextContent) {
             builder.add(translatableTextContent.getKey(), value);
         } else {
             Doritosandprime.LOGGER.warn("Failed to add translation for text: {}", text.getString());
@@ -29,10 +29,12 @@ public class DoritosandprimeEnglishLanguageProvider extends FabricLanguageProvid
     }
 
     @Override
-    public void generateTranslations(RegistryWrapper.WrapperLookup wrapperLookup, TranslationBuilder translationBuilder) {
+    public void generateTranslations(RegistryWrapper.WrapperLookup wrapperLookup,
+            TranslationBuilder translationBuilder) {
         translationBuilder.add(ItemInit.dorito, "Dorito");
         translationBuilder.add(ItemInit.prime, "Prime Bottle");
-        addText(translationBuilder, ItemGroupInit.GROUP_TITLE, "Meme Foods"); // if it errors out, change this value to MOD_GROUP
+        addText(translationBuilder, ItemGroupInit.GROUP_TITLE, "Meme Foods"); // if it errors out, change this value to
+                                                                              // MOD_GROUP
         translationBuilder.add(ItemInit.feastables, "Feastables Chocolate");
         translationBuilder.add(ItemInit.lunchly, "Lunchly");
         translationBuilder.add(ItemInit.mountain_dew, "Mountain Dew");
