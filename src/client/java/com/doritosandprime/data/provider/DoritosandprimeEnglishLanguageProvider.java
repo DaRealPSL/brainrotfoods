@@ -16,7 +16,7 @@ import java.util.concurrent.CompletableFuture;
 public class DoritosandprimeEnglishLanguageProvider extends FabricLanguageProvider {
 
     public DoritosandprimeEnglishLanguageProvider(FabricDataOutput dataOutput,
-            CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
+                                                  CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
         super(dataOutput, registryLookup);
     }
 
@@ -30,11 +30,10 @@ public class DoritosandprimeEnglishLanguageProvider extends FabricLanguageProvid
 
     @Override
     public void generateTranslations(RegistryWrapper.WrapperLookup wrapperLookup,
-            TranslationBuilder translationBuilder) {
+                                     TranslationBuilder translationBuilder) {
         translationBuilder.add(ItemInit.dorito, "Dorito");
         translationBuilder.add(ItemInit.prime, "Prime Bottle");
-        addText(translationBuilder, ItemGroupInit.GROUP_TITLE, "Meme Foods"); // if it errors out, change this value to
-                                                                              // MOD_GROUP
+        addText(translationBuilder, ItemGroupInit.GROUP_TITLE, "Meme Foods");
         translationBuilder.add(ItemInit.feastables, "Feastables Chocolate");
         translationBuilder.add(ItemInit.lunchly, "Lunchly");
         translationBuilder.add(ItemInit.mountain_dew, "Mountain Dew");
@@ -44,5 +43,6 @@ public class DoritosandprimeEnglishLanguageProvider extends FabricLanguageProvid
         translationBuilder.add(BlockInit.MANGO_BLOCK, "Mango Block");
         translationBuilder.add(ItemInit.grimace_shake, "Grimace Shake");
         translationBuilder.add(ItemInit.monster_energy, "Monster Energy Drink");
+        translationBuilder.add(ItemInit.ohio_burger, "Ohio Final Boss Burger");
     }
 }
