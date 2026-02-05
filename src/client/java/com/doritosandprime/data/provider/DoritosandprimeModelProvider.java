@@ -30,6 +30,7 @@ public class DoritosandprimeModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ItemInit.mango, Models.GENERATED);
         itemModelGenerator.register(ItemInit.grimace_shake, Models.GENERATED);
         itemModelGenerator.register(ItemInit.monster_energy, Models.GENERATED);
+        itemModelGenerator.register(ItemInit.ohio_burger, Models.GENERATED);
 
     }
 }
