@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "B": "minecraft:milk_bucket",
-    "M": "minecraft:melon_slice",
+    "M": "doritosandprime:mango",
     "S": "minecraft:sugar"
   },
   "pattern": [
@@ -12,7 +12,6 @@
     " B "
   ],
   "result": {
-    "count": 1,
     "id": "doritosandprime:mango_smoothie"
   }
 }

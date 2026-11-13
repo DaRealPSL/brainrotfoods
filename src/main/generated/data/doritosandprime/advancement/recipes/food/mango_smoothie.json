@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_melon_slice": {
+    "has_mango": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:melon_slice"
+            "items": "doritosandprime:mango"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_melon_slice"
+      "has_mango"
     ]
   ],
   "rewards": {
