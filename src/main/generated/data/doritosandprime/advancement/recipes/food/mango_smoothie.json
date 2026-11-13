@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "doritosandprime:mango_smoothie"
+        "recipes": "doritosandprime:mango_smoothie"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

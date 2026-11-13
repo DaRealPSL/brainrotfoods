@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "doritosandprime:flamin_cheetos"
+        "recipes": "doritosandprime:flamin_cheetos"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

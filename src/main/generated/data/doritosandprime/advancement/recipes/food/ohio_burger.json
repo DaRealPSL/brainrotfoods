@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "doritosandprime:ohio_burger"
+        "recipes": "doritosandprime:ohio_burger"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

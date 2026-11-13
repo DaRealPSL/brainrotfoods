@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "doritosandprime:grimace_shake"
+        "recipes": "doritosandprime:grimace_shake"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
