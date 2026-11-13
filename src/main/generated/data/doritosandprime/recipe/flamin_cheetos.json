@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
     "N": "minecraft:nether_wart",
     "R": "minecraft:red_dye",
