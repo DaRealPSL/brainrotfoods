@@ -35,6 +35,13 @@ fabricApi {
     configureDataGeneration() {
         client = true
     }
+    configureTests {
+        createSourceSet = false
+        modId = "doritosandprime"
+        enableGameTests = true
+        enableClientGameTests = false
+        eula = false
+    }
 }
 
 dependencies {
