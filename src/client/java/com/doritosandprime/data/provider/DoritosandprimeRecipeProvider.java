@@ -91,7 +91,7 @@ public class DoritosandprimeRecipeProvider extends FabricRecipeProvider {
                 // MOUNTAIN DEW
                 //
                 ShapedRecipeBuilder.shaped(itemLookup, RecipeCategory.FOOD, ItemInit.mountain_dew)
-                        .define('G', Items.GREEN_DYE)
+                        .define('G', Items.DYE.green())
                         .define('L', Items.GLOWSTONE_DUST)
                         .define('S', Items.SUGAR)
                         .define('B', Items.GLASS_BOTTLE)
@@ -146,7 +146,7 @@ public class DoritosandprimeRecipeProvider extends FabricRecipeProvider {
                 ShapedRecipeBuilder
                         .shaped(itemLookup, RecipeCategory.FOOD, ItemInit.flamin_cheetos, 2)
                         .define('W', Items.WHEAT)
-                        .define('R', Items.RED_DYE)
+                        .define('R', Items.DYE.red())
                         .define('N', Items.NETHER_WART)
                         .pattern("WRW")
                         .pattern(" N ")
@@ -160,7 +160,7 @@ public class DoritosandprimeRecipeProvider extends FabricRecipeProvider {
                 ShapedRecipeBuilder.shaped(itemLookup, RecipeCategory.FOOD, ItemInit.grimace_shake)
                         .define('A', Items.SWEET_BERRIES)
                         .define('S', Items.SUGAR)
-                        .define('P', Items.PURPLE_DYE)
+                        .define('P', Items.DYE.purple())
                         .define('M', Items.MILK_BUCKET)
                         .define('G', Items.GLASS_BOTTLE)
                         .define('L', Items.SLIME_BALL)
