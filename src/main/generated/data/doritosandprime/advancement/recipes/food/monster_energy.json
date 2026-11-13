@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "doritosandprime:monster_energy"
+        "recipes": "doritosandprime:monster_energy"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

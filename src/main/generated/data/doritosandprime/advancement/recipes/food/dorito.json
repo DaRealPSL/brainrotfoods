@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "doritosandprime:dorito"
+        "recipes": "doritosandprime:dorito"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

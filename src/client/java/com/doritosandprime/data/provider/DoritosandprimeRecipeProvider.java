@@ -4,6 +4,7 @@ import com.doritosandprime.init.BlockInit;
 import com.doritosandprime.init.ItemInit;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.minecraft.advancements.Advancement;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
@@ -11,9 +12,11 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Recipe;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -25,11 +28,13 @@ public class DoritosandprimeRecipeProvider extends FabricRecipeProvider {
 
     @Override
     protected RecipeProvider createRecipeProvider(HolderLookup.Provider registries,
-                                                  RecipeOutput exporter) {
-        return new RecipeProvider(registries, exporter) {
+                                                  BootstrapContext<Recipe<?>> recipes,
+                                                  BootstrapContext<Advancement> advancements) {
+        return new RecipeProvider(recipes, advancements) {
             @Override
             public void buildRecipes() {
-                HolderGetter<Item> itemLookup = this.registries.lookupOrThrow(Registries.ITEM);
+                HolderGetter<Item> itemLookup = registries.lookupOrThrow(Registries.ITEM);
+                RecipeOutput exporter = this.output;
 
                 //
                 // DORITOS

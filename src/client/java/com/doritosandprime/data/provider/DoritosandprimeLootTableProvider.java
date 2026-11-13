@@ -4,12 +4,14 @@ import com.doritosandprime.init.BlockInit;
 import com.doritosandprime.init.ItemInit;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootSubProvider;
+import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
-import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ConstantValue;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProvider;
+import net.minecraft.world.level.storage.loot.providers.number.ints.UniformGenerator;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -30,8 +32,9 @@ public class DoritosandprimeLootTableProvider extends FabricBlockLootSubProvider
         // Make mango blocks drop between 3 and 8 mangoes
         add(BlockInit.MANGO_BLOCK,
                 LootTable.lootTable().withPool(applyExplosionCondition(ItemInit.mango, LootPool.lootPool()
-                        .setRolls(new UniformGenerator(ConstantValue.exactly(3),
-                                ConstantValue.exactly(8)))
+                        .setRolls(Holder.<ContextIntProvider>direct(new UniformGenerator(
+                                Holder.direct(new ConstantValue(3)),
+                                Holder.direct(new ConstantValue(8)))))
                         .add(LootItem.lootTableItem(ItemInit.mango)))));
     }
 }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "doritosandprime:mango_block"
+        "recipes": "doritosandprime:mango_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

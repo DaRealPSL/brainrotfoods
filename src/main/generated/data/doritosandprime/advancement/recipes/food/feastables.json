@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "doritosandprime:feastables"
+        "recipes": "doritosandprime:feastables"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
