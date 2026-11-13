@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "minecraft:glass_bottle",
+    "C": "minecraft:sugar_cane",
+    "G": "minecraft:glow_ink_sac",
+    "I": "minecraft:iron_nugget",
+    "S": "minecraft:sugar"
+  },
+  "pattern": [
+    "SGS",
+    "BCB",
+    " I "
+  ],
+  "result": {
+    "id": "doritosandprime:monster_energy"
+  }
+}

@@ -4,32 +4,32 @@ import com.doritosandprime.Doritosandprime;
 import com.doritosandprime.init.BlockInit;
 import com.doritosandprime.init.ItemGroupInit;
 import com.doritosandprime.init.ItemInit;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
-import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableTextContent;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.contents.TranslatableContents;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.CompletableFuture;
 
 public class DoritosandprimeEnglishLanguageProvider extends FabricLanguageProvider {
 
-    public DoritosandprimeEnglishLanguageProvider(FabricDataOutput dataOutput,
-                                                  CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
+    public DoritosandprimeEnglishLanguageProvider(FabricPackOutput dataOutput,
+                                                  CompletableFuture<HolderLookup.Provider> registryLookup) {
         super(dataOutput, registryLookup);
     }
 
-    private static void addText(@NotNull TranslationBuilder builder, @NotNull Text text, @NotNull String value) {
-        if (text.getContent() instanceof TranslatableTextContent translatableTextContent) {
-            builder.add(translatableTextContent.getKey(), value);
+    private static void addText(@NotNull TranslationBuilder builder, @NotNull Component text, @NotNull String value) {
+        if (text.getContents() instanceof TranslatableContents translatableContents) {
+            builder.add(translatableContents.getKey(), value);
         } else {
             Doritosandprime.LOGGER.warn("Failed to add translation for text: {}", text.getString());
         }
     }
 
     @Override
-    public void generateTranslations(RegistryWrapper.WrapperLookup wrapperLookup,
+    public void generateTranslations(HolderLookup.Provider wrapperLookup,
                                      TranslationBuilder translationBuilder) {
         translationBuilder.add(ItemInit.dorito, "Dorito");
         translationBuilder.add(ItemInit.prime, "Prime Bottle");

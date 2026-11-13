@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "minecraft:sweet_berries",
+    "G": "minecraft:glass_bottle",
+    "L": "minecraft:slime_ball",
+    "M": "minecraft:milk_bucket",
+    "P": "minecraft:purple_dye",
+    "S": "minecraft:sugar"
+  },
+  "pattern": [
+    "ASP",
+    "MGS",
+    " L "
+  ],
+  "result": {
+    "id": "doritosandprime:grimace_shake"
+  }
+}

@@ -5,17 +5,17 @@ import com.doritosandprime.init.ItemGroupInit;
 import com.doritosandprime.init.ItemInit;
 
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
+import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 
-import net.minecraft.item.ItemGroups;
-import net.minecraft.item.Items;
-import net.minecraft.util.Identifier;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.world.biome.BiomeKeys;
-import net.minecraft.world.gen.GenerationStep;
-import net.minecraft.registry.RegistryKey;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.biome.Biomes;
+import net.minecraft.world.level.levelgen.GenerationStep;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,33 +31,33 @@ public class Doritosandprime implements ModInitializer {
         ItemGroupInit.load();
         BlockInit.initialize();
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(entries -> {
-            entries.addAfter(Items.PUMPKIN_PIE, ItemInit.dorito);
-            entries.addBefore(Items.MILK_BUCKET, ItemInit.prime);
-            entries.addAfter(ItemInit.dorito, ItemInit.feastables);
-            entries.addAfter(ItemInit.feastables, ItemInit.lunchly);
-            entries.add(ItemInit.mango);
-            entries.addAfter(ItemInit.lunchly, ItemInit.mountain_dew);
-            entries.addAfter(ItemInit.mountain_dew, ItemInit.mango_smoothie);
-            entries.addAfter(ItemInit.mango_smoothie, ItemInit.flamin_cheetos);
-            entries.addAfter(ItemInit.flamin_cheetos, ItemInit.grimace_shake);
-            entries.addAfter(ItemInit.grimace_shake, ItemInit.monster_energy);
-            entries.addAfter(ItemInit.monster_energy, ItemInit.ohio_burger);
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.FOOD_AND_DRINKS).register(entries -> {
+            entries.insertAfter(Items.PUMPKIN_PIE, ItemInit.dorito);
+            entries.insertBefore(Items.MILK_BUCKET, ItemInit.prime);
+            entries.insertAfter(ItemInit.dorito, ItemInit.feastables);
+            entries.insertAfter(ItemInit.feastables, ItemInit.lunchly);
+            entries.accept(ItemInit.mango);
+            entries.insertAfter(ItemInit.lunchly, ItemInit.mountain_dew);
+            entries.insertAfter(ItemInit.mountain_dew, ItemInit.mango_smoothie);
+            entries.insertAfter(ItemInit.mango_smoothie, ItemInit.flamin_cheetos);
+            entries.insertAfter(ItemInit.flamin_cheetos, ItemInit.grimace_shake);
+            entries.insertAfter(ItemInit.grimace_shake, ItemInit.monster_energy);
+            entries.insertAfter(ItemInit.monster_energy, ItemInit.ohio_burger);
         });
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS)
-                .register(entries -> entries.add(ItemInit.mango_block));
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS)
+                .register(entries -> entries.accept(ItemInit.mango_block));
 
         BiomeModifications.addFeature(
                 BiomeSelectors.includeByKey(
-                        BiomeKeys.JUNGLE,
-                        BiomeKeys.SPARSE_JUNGLE,
-                        BiomeKeys.BAMBOO_JUNGLE),
-                GenerationStep.Feature.VEGETAL_DECORATION,
-                RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(MOD_ID, "patch_mango")));
+                        Biomes.JUNGLE,
+                        Biomes.SPARSE_JUNGLE,
+                        Biomes.BAMBOO_JUNGLE),
+                GenerationStep.Decoration.VEGETAL_DECORATION,
+                ResourceKey.create(Registries.PLACED_FEATURE, id("patch_mango")));
     }
 
     public static Identifier id(String path) {
-        return Identifier.of(MOD_ID, path);
+        return Identifier.fromNamespaceAndPath(MOD_ID, path);
     }
 }

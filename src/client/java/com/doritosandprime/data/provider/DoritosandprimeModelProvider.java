@@ -3,34 +3,34 @@ package com.doritosandprime.data.provider;
 import com.doritosandprime.init.BlockInit;
 import com.doritosandprime.init.ItemInit;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.minecraft.client.data.BlockStateModelGenerator;
-import net.minecraft.client.data.ItemModelGenerator;
-import net.minecraft.client.data.Models;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
+import net.minecraft.client.data.models.BlockModelGenerators;
+import net.minecraft.client.data.models.ItemModelGenerators;
+import net.minecraft.client.data.models.model.ModelTemplates;
 
 public class DoritosandprimeModelProvider extends FabricModelProvider {
-    public DoritosandprimeModelProvider(FabricDataOutput output) {
+    public DoritosandprimeModelProvider(FabricPackOutput output) {
         super(output);
     }
 
     @Override
-    public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-        blockStateModelGenerator.registerSimpleCubeAll(BlockInit.MANGO_BLOCK);
+    public void generateBlockStateModels(BlockModelGenerators blockStateModelGenerator) {
+        blockStateModelGenerator.createTrivialCube(BlockInit.MANGO_BLOCK);
     }
 
     @Override
-    public void generateItemModels(ItemModelGenerator itemModelGenerator) {
-        itemModelGenerator.register(ItemInit.dorito, Models.GENERATED);
-        itemModelGenerator.register(ItemInit.feastables, Models.GENERATED);
-        itemModelGenerator.register(ItemInit.prime, Models.GENERATED);
-        itemModelGenerator.register(ItemInit.lunchly, Models.GENERATED);
-        itemModelGenerator.register(ItemInit.mountain_dew, Models.GENERATED);
-        itemModelGenerator.register(ItemInit.mango_smoothie, Models.GENERATED);
-        itemModelGenerator.register(ItemInit.flamin_cheetos, Models.GENERATED);
-        itemModelGenerator.register(ItemInit.mango, Models.GENERATED);
-        itemModelGenerator.register(ItemInit.grimace_shake, Models.GENERATED);
-        itemModelGenerator.register(ItemInit.monster_energy, Models.GENERATED);
-        itemModelGenerator.register(ItemInit.ohio_burger, Models.GENERATED);
+    public void generateItemModels(ItemModelGenerators itemModelGenerator) {
+        itemModelGenerator.generateFlatItem(ItemInit.dorito, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(ItemInit.feastables, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(ItemInit.prime, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(ItemInit.lunchly, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(ItemInit.mountain_dew, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(ItemInit.mango_smoothie, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(ItemInit.flamin_cheetos, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(ItemInit.mango, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(ItemInit.grimace_shake, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(ItemInit.monster_energy, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(ItemInit.ohio_burger, ModelTemplates.FLAT_ITEM);
 
     }
 }
